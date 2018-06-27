@@ -26,6 +26,11 @@ const rootReducer = (state = initialState, action) => {
 const store = createStore(rootReducer);
 console.log(store.getState());
 
+// Subscription
+store.subscribe(() => {
+    console.log('[SUBSCRIBE]', store.getState());
+});
+
 // Dispatching
 store.dispatch(
     {
@@ -39,6 +44,3 @@ store.dispatch(
     }
 );
 console.log(store.getState());
-
-
-// Subscription
